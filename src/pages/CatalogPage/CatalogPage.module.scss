@@ -3,3 +3,19 @@
   top: 0;
   left: 50%;
 }
+
+.categorySelect {
+  margin-left: 14px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.formElements {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  align-items: flex-start;
+  margin-left: 30px;
+}
