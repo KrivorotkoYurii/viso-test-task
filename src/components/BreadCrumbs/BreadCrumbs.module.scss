@@ -1,0 +1,44 @@
+@import '../../styles/utils/variables';
+@import '../../styles/utils/mixins';
+
+.breadcrumbs {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  margin-bottom: 24px;
+
+  @include on-tablet {
+    margin-bottom: 40px;
+  }
+
+
+  &__link,
+  &__arrow {
+    text-decoration: none;
+    color: #89939a;
+
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15.34px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    letter-spacing: 0.04em;
+  }
+
+  &__arrow {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__link {
+    color: #0f0f11;
+
+    &--active {
+      color: #89939a;
+
+      cursor: default;
+    }
+  }
+}
