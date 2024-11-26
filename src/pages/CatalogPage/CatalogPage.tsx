@@ -1,33 +1,36 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import { Loader } from '../../components/Loader';
 import { fetchRecipesByLetters } from '../../utils/fetchAllRecipes';
 import styles from './CatalogPage.module.scss';
-import { Recepy } from '../../types/recipy';
+// import { Recepy } from '../../types/recipy';
 import { RecepyList } from '../../components/RecepyList/RecepyList';
+import { useQuery } from 'react-query';
 
 export const CatalogPage = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [recepies, setRecepies] = useState<Recepy[]>([]);
+  const { data, isLoading } = useQuery('recepies', fetchRecipesByLetters);
 
-  const handleLoadProducts = () => {
-    setIsLoading(true);
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [recepies, setRecepies] = useState<Recepy[]>([]);
 
-    fetchRecipesByLetters()
-      .then(data => {
-        setRecepies(data);
-      })
-      .catch(() => {
-        throw new Error('a');
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  };
+  // const handleLoadProducts = () => {
+  //   setIsLoading(true);
 
-  useEffect(() => {
-    handleLoadProducts();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  //   fetchRecipesByLetters()
+  //     .then(data => {
+  //       setRecepies(data);
+  //     })
+  //     .catch(() => {
+  //       throw new Error('a');
+  //     })
+  //     .finally(() => {
+  //       setIsLoading(false);
+  //     });
+  // };
+
+  // useEffect(() => {
+  //   handleLoadProducts();
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   return (
     <div>
@@ -36,7 +39,7 @@ export const CatalogPage = () => {
           <Loader />
         </div>
       ) : (
-        <RecepyList recepies={recepies} />
+        <RecepyList recepies={data} />
       )}
     </div>
   );
