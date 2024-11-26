@@ -8,6 +8,8 @@ import { useSearchParams } from 'react-router-dom';
 import 'bulma/css/bulma.min.css';
 import { useCallback, useState } from 'react';
 import debounce from 'lodash.debounce';
+import { Pagination } from '../../components/Pagination';
+import { useChoices } from '../../context/ChoicesContext';
 
 export const CatalogPage = () => {
   const { data, isLoading } = useQuery('recepies', fetchRecipesByLetters);
@@ -26,10 +28,25 @@ export const CatalogPage = () => {
 
   const selectedCategory = searchParams.get('category') || '';
 
+  const currentPage = searchParams.get('page') || '1';
+
+  const handlePageChange = (pageWePress: string) => {
+    const params = new URLSearchParams(searchParams);
+
+    params.set('page', pageWePress);
+
+    if (pageWePress === '1') {
+      params.delete('page');
+    }
+
+    setSearchParams(params);
+  };
+
   const handleQueryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const params = new URLSearchParams(searchParams);
 
     params.set('query', event.target.value);
+    params.set('page', '1');
     applyQuery(event.target.value.trim());
 
     if (event.target.value === '') {
@@ -45,6 +62,7 @@ export const CatalogPage = () => {
     const params = new URLSearchParams(searchParams);
 
     params.set('category', event.target.value);
+    params.set('page', '1');
 
     if (event.target.value === '') {
       params.delete('category');
@@ -69,6 +87,24 @@ export const CatalogPage = () => {
     return prepearedRecepies.filter(recepy =>
       recepy.strMeal?.toLowerCase()?.includes(appliedQuery.toLowerCase()),
     );
+  };
+
+  const getFilteredByPage = (allR: Recepy[]) => {
+    const result = getFilteredByCategoryAndQuery(allR);
+
+    const firstRecipeOnPage = (+currentPage - 1) * 14;
+
+    const firstIndexOnPage = currentPage === '1' ? 0 : firstRecipeOnPage - 1;
+
+    const lastRecipeOnPage = firstIndexOnPage + 14;
+
+    return result.slice(firstIndexOnPage, lastRecipeOnPage);
+  };
+
+  const { addRecipe } = useChoices();
+
+  const handleSelectRecipe = (recipe: Recepy) => {
+    addRecipe(recipe);
   };
 
   if (isLoading) {
@@ -115,7 +151,18 @@ export const CatalogPage = () => {
         </div>
       </div>
 
-      {data && <RecepyList recepies={getFilteredByCategoryAndQuery(data)} />}
+      {data && (
+        <>
+          <RecepyList
+            recepies={getFilteredByPage(data)}
+            onSelectRecipe={handleSelectRecipe}
+          />
+          <Pagination
+            onPageChange={handlePageChange}
+            total={getFilteredByCategoryAndQuery(data)}
+          />
+        </>
+      )}
     </div>
   );
 };

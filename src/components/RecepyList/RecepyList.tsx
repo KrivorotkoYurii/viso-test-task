@@ -5,6 +5,7 @@ import styles from './RecepyList.module.scss';
 
 interface Props {
   recepies: Recepy[] | undefined;
+  onSelectRecipe?: (recipe: Recepy) => void;
 }
 
 export const RecepyList: React.FC<Props> = ({ recepies }) => {

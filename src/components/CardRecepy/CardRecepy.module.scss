@@ -1,10 +1,10 @@
 .card {
   display: flex;
-  height: 400px;
-  width: 200px;
+  height: 450px;
+  position: relative;
+  width: 250px;
   flex-direction: column;
   margin: 0 auto;
-
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
@@ -15,6 +15,12 @@
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     cursor: pointer;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }
 
@@ -41,4 +47,36 @@
   font-size: 0.875rem;
   color: #555;
   margin: 4px 0;
+}
+
+.addButton {
+  background-color: #ff9800;
+  position: absolute;
+  bottom: 20px;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1em;
+  margin-top: 0.5em;
+  width: 100%;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #e68a00;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.added {
+  background-color: #4caf50;
+  color: white;
+
+  &:hover {
+    background-color: #43a047;
+  }
 }

@@ -10,20 +10,23 @@ import { CatalogPage } from './pages/CatalogPage';
 import { ChoicesPage } from './pages/ChoicesPage';
 import { HomePage } from './pages/HomePage';
 import { RecepyDetailPage } from './pages/RecepyDetailPage';
+import { ChoicesProvider } from './context/ChoicesContext';
 
 export const Root = () => (
-  <Router>
-    <Routes>
-      <Route path="/" element={<App />}>
-        <Route path="home" element={<Navigate to="/" replace />} />
-        <Route index element={<HomePage />} />
-        <Route path="catalog">
-          <Route index element={<CatalogPage />} />
-          <Route path=":idMeal" element={<RecepyDetailPage />} />
+  <ChoicesProvider>
+    <Router>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route path="home" element={<Navigate to="/" replace />} />
+          <Route index element={<HomePage />} />
+          <Route path="catalog">
+            <Route index element={<CatalogPage />} />
+            <Route path=":idMeal" element={<RecepyDetailPage />} />
+          </Route>
+          <Route path="choices" element={<ChoicesPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
-        <Route path="choices" element={<ChoicesPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Route>
-    </Routes>
-  </Router>
+      </Routes>
+    </Router>
+  </ChoicesProvider>
 );

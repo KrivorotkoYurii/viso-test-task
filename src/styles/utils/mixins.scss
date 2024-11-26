@@ -18,3 +18,22 @@ $desktop-min-width: 1200px;
     @content;
   }
 }
+
+@mixin pagination-buttons-style {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+  border-radius: 48px;
+
+  text-decoration: none;
+  color: var(--primary-color);
+
+  background-color: transparent;
+
+  &:hover {
+    border-color: var(--primary-color);
+  }
+}

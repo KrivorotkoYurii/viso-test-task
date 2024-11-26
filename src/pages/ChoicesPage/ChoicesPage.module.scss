@@ -1,1 +1,88 @@
-// wr
+.choicesPage {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.recipeList {
+  list-style: none;
+  padding: 0;
+}
+
+.recipeItem {
+  display: flex;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.recipeImage {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.recipeInfo {
+  padding: 10px;
+  flex: 1;
+}
+
+.recipeInfo h3 {
+  font-size: 1.25rem;
+  margin: 0 0 8px;
+}
+
+.recipeInfo p {
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.removeButton {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1em;
+  margin-top: 0.5em;
+
+  &:hover {
+    background-color: #d32f2f;
+  }
+}
+
+.ingredientsSection {
+  margin-top: 40px;
+}
+
+.ingredientsSection h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.ingredientsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ingredientItem {
+  font-size: 1rem;
+  background-color: #f7f7f7;
+  padding: 8px;
+  margin-bottom: 4px;
+  border-radius: 4px;
+}
+
+.title {
+  font-size: 52px;
+  font-size: 800;
+  margin-bottom: 30px;
+}
+
+.link {
+  display: inline-block;
+}

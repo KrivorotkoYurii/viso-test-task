@@ -1,0 +1,95 @@
+@import '../../styles/utils/variables';
+@import '../../styles/utils/mixins';
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+  }
+
+  &__next {
+    @include pagination-buttons-style;
+
+    border: 1px solid #0f0f11;
+    background-color: grey;
+
+    &:hover {
+      background-color: #b4bdc3;
+      cursor: pointer;
+    }
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+
+    &--arrows {
+      @include pagination-buttons-style;
+
+      border: 1px solid #b4bdc3;
+
+      &.disabled {
+        border-color: #e2e6e9;
+        cursor: none;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__item {
+    @include pagination-buttons-style;
+
+    border: 1px solid grey;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: #b4bdc3;
+    }
+
+    &--arrows {
+      @include pagination-buttons-style;
+
+      border: 1px solid #b4bdc3;
+
+      &.disabled {
+        border-color: #e2e6e9;
+        cursor: none;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__active {
+    background-color: #0f0f11;
+    color: #fff;
+  }
+}
+
+.selected {
+  @include pagination-buttons-style;
+
+  border: 1px solid #0f0f11;
+  background-color: grey;
+
+  &:hover {
+    background-color: #b4bdc3;
+    cursor: pointer;
+  }
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  background-color: aqua;
+}
