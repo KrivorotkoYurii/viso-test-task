@@ -9,6 +9,7 @@ import { NotFoundPage } from './pages/NotFoundPage';
 import { CatalogPage } from './pages/CatalogPage';
 import { ChoicesPage } from './pages/ChoicesPage';
 import { HomePage } from './pages/HomePage';
+import { RecepyDetailPage } from './pages/RecepyDetailPage';
 
 export const Root = () => (
   <Router>
@@ -18,7 +19,7 @@ export const Root = () => (
         <Route index element={<HomePage />} />
         <Route path="catalog">
           <Route index element={<CatalogPage />} />
-          <Route path=":slug" element={<CatalogPage />} />
+          <Route path=":idMeal" element={<RecepyDetailPage />} />
         </Route>
         <Route path="choices" element={<ChoicesPage />} />
         <Route path="*" element={<NotFoundPage />} />

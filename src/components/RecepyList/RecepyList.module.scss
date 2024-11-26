@@ -1,0 +1,9 @@
+.listWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  padding: 16px;
+}
