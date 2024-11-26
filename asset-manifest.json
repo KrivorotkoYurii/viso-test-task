@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/viso-test-task/static/css/main.d428c7d0.css",
-    "main.js": "/viso-test-task/static/js/main.a06437d6.js",
+    "main.css": "/viso-test-task/static/css/main.83eed5aa.css",
+    "main.js": "/viso-test-task/static/js/main.4c3d9364.js",
     "static/media/tomato.png": "/viso-test-task/static/media/tomato.4405c07db784c272a39d.png",
     "static/media/page-not-found.png": "/viso-test-task/static/media/page-not-found.6f5b123471bc09721371.png",
+    "static/media/home.svg": "/viso-test-task/static/media/home.9a24a70540404ccecd05fd9f900ddeeb.svg",
+    "static/media/arrow_right.svg": "/viso-test-task/static/media/arrow_right.a374b573155c92815583d44daaae0b60.svg",
     "index.html": "/viso-test-task/index.html",
-    "main.d428c7d0.css.map": "/viso-test-task/static/css/main.d428c7d0.css.map",
-    "main.a06437d6.js.map": "/viso-test-task/static/js/main.a06437d6.js.map"
+    "main.83eed5aa.css.map": "/viso-test-task/static/css/main.83eed5aa.css.map",
+    "main.4c3d9364.js.map": "/viso-test-task/static/js/main.4c3d9364.js.map"
   },
   "entrypoints": [
-    "static/css/main.d428c7d0.css",
-    "static/js/main.a06437d6.js"
+    "static/css/main.83eed5aa.css",
+    "static/js/main.4c3d9364.js"
   ]
 }
