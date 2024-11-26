@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/viso-test-task/static/css/main.0179449d.css",
+    "main.js": "/viso-test-task/static/js/main.0c10f6ed.js",
+    "static/media/tomato.png": "/viso-test-task/static/media/tomato.4405c07db784c272a39d.png",
+    "static/media/page-not-found.png": "/viso-test-task/static/media/page-not-found.6f5b123471bc09721371.png",
+    "index.html": "/viso-test-task/index.html",
+    "main.0179449d.css.map": "/viso-test-task/static/css/main.0179449d.css.map",
+    "main.0c10f6ed.js.map": "/viso-test-task/static/js/main.0c10f6ed.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0179449d.css",
+    "static/js/main.0c10f6ed.js"
+  ]
+}
